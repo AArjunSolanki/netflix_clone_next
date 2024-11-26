@@ -6,35 +6,18 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   getPopularMovieByName,
   getPopularMovieList,
-} from "./redux/actions/moviesAction";
-import { AppDispatch } from "./redux/store";
-import "./assets/styles/movieList.scss";
-
-// Define the types for your state
-interface Movie {
-  imdbID: string;
-  Poster: string;
-  Title: string;
-  Year: string;
-  original_title: string;
-}
-
-interface MovieState {
-  popularMovieList: Movie[];
-  popularMoviePageNo: number;
-  totalPopularMoviesPages: number;
-  loading: boolean;
-}
+} from "../redux/actions/moviesAction";
+import { AppDispatch } from "../redux/store";
+import "../assets/styles/movieList.scss";
+import { MoviesState } from "../types/movieInterfaces";
 
 const Home: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();  
 
   const {
     popularMovieList,
-    popularMoviePageNo,
-    totalPopularMoviesPages,
     loading,
-  } = useSelector((state: { movies: MovieState }) => state.movies);
+  } = useSelector((state: { movies: MoviesState }) => state.movies);
 
   const [searchFilter, setSearchFilter] = useState<string>("");
   const DEFAULT_SEARCH = "venom";

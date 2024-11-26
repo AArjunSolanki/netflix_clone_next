@@ -4,52 +4,7 @@ import {
   getPopularMovieByName,
   getPopularMovieList,
 } from "../actions/moviesAction";
-
-// Define the types for the state structure
-interface Movie {
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Type: string;
-  Poster: string;
-}
-
-interface MovieDetails {
-  Title: string;
-  Year: string;
-  Rated: string;
-  Released: string;
-  Runtime: string;
-  Genre: string;
-  Director: string;
-  Writer: string;
-  Actors: string;
-  Plot: string;
-  Language: string;
-  Country: string;
-  Awards: string;
-  Poster: string;
-  Ratings: { Source: string; Value: string }[];
-  Metascore: string;
-  imdbRating: string;
-  imdbVotes: string;
-  imdbID: string;
-  Type: string;
-  DVD: string;
-  BoxOffice: string;
-  Production: string;
-  Website: string;
-  Response: string;
-}
-
-interface MoviesState {
-  loading: boolean;
-  popularMovieList: Movie[];
-  totalPopularMoviesPages: number;
-  popularMoviePageNo: number;
-  movieDetails: MovieDetails | null;
-  movieCreditDetails: any | null; // Replace `any` with the actual type if available
-}
+import { MoviesState, MovieDetails, Movie } from "@/types/movieInterfaces";
 
 const initialState: MoviesState = {
   loading: false,

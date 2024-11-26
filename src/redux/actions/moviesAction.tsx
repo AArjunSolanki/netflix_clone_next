@@ -1,45 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import MovieAPI from "../../services/api/movies";
-
-interface Movie {
-  Title: string;
-  Year: string;
-  imdbID: string;
-  Type: string;
-  Poster: string;
-}
-
-interface MovieDetails {
-  Title: string;
-  Year: string;
-  Rated: string;
-  Released: string;
-  Runtime: string;
-  Genre: string;
-  Director: string;
-  Writer: string;
-  Actors: string;
-  Plot: string;
-  Language: string;
-  Country: string;
-  Awards: string;
-  Poster: string;
-  Ratings: { Source: string; Value: string }[];
-  Metascore: string;
-  imdbRating: string;
-  imdbVotes: string;
-  imdbID: string;
-  Type: string;
-  DVD: string;
-  BoxOffice: string;
-  Production: string;
-  Website: string;
-  Response: string;
-}
-
-interface APIError {
-  message: string;
-}
+import { Movie, MovieDetails, APIError } from "@/types/movieInterfaces";
 
 // get popular movie list
 export const getPopularMovieList = createAsyncThunk<

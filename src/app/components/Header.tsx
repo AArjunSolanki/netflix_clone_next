@@ -2,12 +2,8 @@
 import React, { useState } from "react";
 import { GrMenu } from "react-icons/gr";
 import Link from "next/link";
-import "../assets/styles/header.scss";
-
-interface NavItem {
-  label: string;
-  link: string;
-}
+import "../../assets/styles/header.scss";
+import { NavItem } from "../../types/movieInterfaces";
 
 const Header: React.FC = () => {
   const navItems: NavItem[] = [

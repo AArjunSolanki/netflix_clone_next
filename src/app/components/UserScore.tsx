@@ -1,9 +1,6 @@
 import React from "react";
-import "../assets/styles/circularProgressWithLabel.scss";
-
-interface CircularProgressWithLabelProps {
-  value: string;
-}
+import { CircularProgressWithLabelProps } from "../../types/movieInterfaces";
+import "../../assets/styles/circularProgressWithLabel.scss";
 
 const CircularProgressWithLabel: React.FC<CircularProgressWithLabelProps> = ({ value }) => {
   const percentage = (parseInt(value) / 10) * 100;

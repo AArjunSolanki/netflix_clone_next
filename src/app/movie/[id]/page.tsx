@@ -1,14 +1,13 @@
 "use client"
 import React, { useCallback, useEffect } from "react";
-import Image from "next/image";
-import PlaceholderImg from "../../assets/png/img-placeholder.png";
-import { formatDate } from "../../core/utils";
+import Image from "next/legacy/image";
+import PlaceholderImg from "../../../assets/png/img-placeholder.png";
 import { toast } from "react-toastify";
 import CircularProgressWithLabel from "../../components/UserScore";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovieDetailsById } from "../../redux/actions/moviesAction";
-import "../../assets/styles/movieDetails.scss";
-import { RootState, AppDispatch } from "../../redux/store";
+import { getMovieDetailsById } from "../../../redux/actions/moviesAction";
+import "../../../assets/styles/movieDetails.scss";
+import { RootState, AppDispatch } from "../../../redux/store";
 
 
 const MovieDetails = ({ params }: { params: Promise<{ id: string }> }) => {
@@ -45,6 +44,7 @@ const MovieDetails = ({ params }: { params: Promise<{ id: string }> }) => {
             {movieDetails ? (
               <div className="movie-details__content">
                 <div className="movie-details__poster">
+                  <div className="movie-details__div">
                   <Image
                     src={
                       movieDetails?.Poster !== "N/A"
@@ -55,9 +55,9 @@ const MovieDetails = ({ params }: { params: Promise<{ id: string }> }) => {
                     className="movie-details__poster-image"
                     width={300}
                     height={450}
-                    layout="responsive"
                     priority
                   />
+                  </div>
                   <div className="movie-details__rating">
                     <CircularProgressWithLabel value={movieDetails.imdbRating} />
 
