@@ -1,0 +1,38 @@
+.circular-progress {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    &__circle {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+  
+      .circular-progress__background {
+        fill: none;
+        stroke: #f0f0f0;
+        stroke-width: 3;
+      }
+  
+      .circular-progress__progress {
+        fill: none;
+        stroke: #0078d7; // Customize with your desired color
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 0, 100;
+        transition: stroke-dasharray 0.3s ease;
+      }
+    }
+  
+    &__label {
+      position: absolute;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+    }
+  }
+  

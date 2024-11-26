@@ -1,0 +1,126 @@
+/* General Container Class */
+
+  
+  /* Header Component Styles */
+  .header {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    &__app-bar {
+      background-color: #1976d2;
+      color: white;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    &__menu-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      display: none;
+  
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  
+    &__logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+  
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
+    &__nav-links {
+      display: flex;
+      gap: 16px;
+  
+      @media (max-width: 768px) {
+        display: none;
+      }
+  
+      .header__nav-link {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        padding: 8px 0;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s;
+  
+        &--active {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  
+    &__drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: white;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      width: 0;
+      overflow: hidden;
+      transition: width 0.3s;
+  
+      &--open {
+        width: 240px;
+      }
+  
+      &__drawer-content {
+        padding: 16px;
+        text-align: center;
+      }
+  
+      &__drawer-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+  
+      .header__drawer-list {
+        list-style: none;
+        padding: 20px;
+        margin-top: 50px;
+
+  
+        li {
+          margin-bottom: 8px;
+  
+          .header__drawer-link {
+            text-decoration: none;
+            color: #1976d2;
+            font-size: 1rem;
+            padding: 8px 0;
+            display: block;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+  
+            &--active {
+              border-bottom: 2px solid #1976d2;
+              color: #003c8f;
+            }
+          }
+        }
+      }
+    }
+  }
+  
