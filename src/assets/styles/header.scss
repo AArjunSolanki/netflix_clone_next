@@ -80,6 +80,7 @@
       width: 0;
       overflow: hidden;
       transition: width 0.3s;
+      z-index: 9;
   
       &--open {
         width: 240px;
